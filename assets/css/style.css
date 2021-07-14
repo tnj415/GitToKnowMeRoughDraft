@@ -10,12 +10,13 @@ body {
     /* margin: 20px; */
     display: flex;
     flex-direction: column;
+    background-color: rgb(124, 202, 216);
 
 }
 
 .n-bar {
 
-    --text: white;
+    --text: rgb(124, 202, 216);
     /* --text-inverse: rgb(22, 8, 104); */
     --background: rgb(43, 82, 64);
     position: fixed;
@@ -54,7 +55,7 @@ body {
 
 .n-scrolled {
     --text: rgb(8, 104, 59);
-    --background: rgb(255, 255, 255);
+    --background: rgb(124, 202, 216);
 
     box-shadow: 0 3px 20px rgba(black, 0.2);
 }
@@ -77,7 +78,7 @@ article.info {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    color: white;
+    color: rgb(124, 202, 216);
     font-size: large;
 }
 
@@ -88,13 +89,11 @@ article.info::after {
     top: 50px;
     width: 4px;
     height: 60%;
-    background: rgb(255, 255, 255);
+    background: rgb(124, 202, 216);
 
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform .5s ease-in;
-
-
 }
 
 article.info:hover::after {
@@ -106,12 +105,30 @@ article.info:hover::after {
     height: 300px;
 }
 
+button#contact-btn {
+    background-color: rgb(43, 82, 64);
+    color: rgb(124, 202, 216);
+    border: 2px solid rgb(124, 202, 216);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font: inherit;
+   
+}
+
+button#contact-btn:hover {
+    background-color: rgb(124, 202, 216);
+    color: rgb(43, 82, 64);
+}
+
+
 .about-me,
 .resume,
 .projects {
     margin: 100px 20px;
     padding: 20px 50px;
     color: black;
+    background-color: rgb(43, 82, 64);
+    color: rgb(124, 202, 216);
 }
 
 
@@ -121,7 +138,7 @@ article.info:hover::after {
     left: -30px;
     width: fit-content;
     transition: 1s;
-    color: rgb(8, 104, 59);
+    color: white;
 
 
 }
@@ -149,12 +166,87 @@ article.info:hover::after {
 
 .fancy {
     transform: scaleX(1);
-    color: white;
+    color: rgb(124, 202, 216);
     background: rgb(101, 104, 102);
 
 }
 
-.from-left {
+#one-line,
+#one-line a {
+    display: flex;
+    align-items: baseline;
+    text-decoration: none;
+    color: rgb(124, 202, 216)
+}
+
+.collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.projects h3 {
+    color: rgb(124, 202, 216);
+    text-align: center;
+}
+.projects img{
+    height:200px;
+    width: 300px;
+    transition: .75s ease-in;
+}
+
+.project1 ,
+.project2 ,
+.project3 ,
+.project4 ,
+.project5 {
+    position: relative;
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    transition: .75s ease-in;
+}
+
+.project1:hover,
+.project2:hover,
+.project3:hover,
+.project4:hover,
+.project5:hover {
+    background-color: rgb(101, 104, 102); 
+}
+
+.project1 p ,
+.project2 p ,
+.project3 p ,
+.project4 p ,
+.project5 p {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: .75s ease-in;
+    color: rgb(124, 202, 216);
+    font-weight: bold;
+    padding: 2px;
+}
+
+.project1:hover p ,
+.project2:hover p ,
+.project3:hover p ,
+.project4:hover p ,
+.project5:hover p {
+    opacity: 1;
+}
+
+.project1:hover img, 
+.project2:hover img, 
+.project3:hover img, 
+.project4:hover img, 
+.project5:hover img {
+    opacity:.2;
+    
+}
+
+/* .from-left {
     grid-column: 2/3;
     transform: translateX(-50%);
 }
@@ -176,10 +268,7 @@ article.info:hover::after {
 .from-right {
     transition: translateX(0);
     opacity: 1;
-}
-
-
-
+} */
 
 
 /***********************************************************************/
@@ -306,3 +395,48 @@ span.close {
 }
 
 /****************************************************************/
+
+
+@media screen and (max-width: 900px) {
+
+    .profile{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hws{
+        /* display:none; */
+        font-size:4vw;
+        justify-content: space-between;
+    }
+
+    .menu-btn {
+        display: block;
+        justify-content: end;
+    }
+
+    .collection {
+        display:flex;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 374px) {
+
+    .project1 {
+        margin: 0 !important;
+        border-bottom: 5px solid rgb(43, 82, 64);
+        overflow: none;
+
+
+    }
+    .project2,
+    .project3,
+    .project4,
+    .project5 {
+        margin:0px !important;
+        border: 5px solid rgb(43, 82, 64);
+        overflow: none;
+    }
+}

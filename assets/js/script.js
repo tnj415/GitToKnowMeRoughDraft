@@ -26,7 +26,7 @@ profileElObserver.observe(profileEl)
 const options = {
     root: null,
     threshold: 0,
-    rootMargin: "-300px 0px -150px 0px"
+    rootMargin: "-150px 0px"
 };
  // let callback = (entries, observer) => {
 const observer = new IntersectionObserver(function (entries, observer) {
@@ -49,32 +49,32 @@ containers.forEach(container => {
     observer.observe(container);
 })
 
-const appearOptions = {
-    threshold: 1,
-    rootMargin: "0px 0px -100px 0px"
-};
+// const appearOptions = {
+//     threshold: 1,
+//     rootMargin: "0px 0px -100px 0px"
+// };
 
-const AppearOnScroll = new IntersectionObserver (function(entries, appearOnScroll)
-{
-    entries.forEach(entry => {
-        if(!entry.isIntersecting) {
-            entry.target.classList.toggle('appear', false);
-            return;
-        }
-        else {
-            entry.target.classList.toggle('appear');
-            appearOnScroll.unobserve(entry.target);
-        }
-    })
-}, appearOptions)
+// const AppearOnScroll = new IntersectionObserver (function(entries, appearOnScroll)
+// {
+//     entries.forEach(entry => {
+//         if(!entry.isIntersecting) {
+//             entry.target.classList.toggle('appear', false);
+//             return;
+//         }
+//         else {
+//             entry.target.classList.toggle('appear');
+//             appearOnScroll.unobserve(entry.target);
+//         }
+//     })
+// }, appearOptions)
 
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-})
+// faders.forEach(fader => {
+//     appearOnScroll.observe(fader);
+// })
 
-sliders.forEach(slider => {
-    appearOnScroll.observe(slider);
-})
+// sliders.forEach(slider => {
+//     appearOnScroll.observe(slider);
+// })
 
 
 //*************************************************************************************
