@@ -1,4 +1,8 @@
 *{
+    /* --text: rgb(255, 255, 255);
+    --text-inverse: rgb(22, 8, 104);
+    --background: rgb(22, 8, 104);
+    color: var(--text); */
     font-family: 'Raleway', sans-serif;
 }
 
@@ -6,24 +10,52 @@ body {
     /* margin: 20px; */
     display: flex;
     flex-direction: column;
+    
 }
-.n-bar {
+.n-bar {   
+    
+    --text: white;
+    /* --text-inverse: rgb(22, 8, 104); */
+    --background: rgb(43, 82, 64);
+    position: fixed;
+    width: 100%;
+    z-index: 99;
     display:flex;
     justify-content: center;
-    background-color: rgb(207, 245, 226);
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-color: var(--background);
+    color: var(--text);
+
+    text-decoration: none;
+   
+    border-bottom: 3px solid transparent;
+
 }
 
 .n-bar a {
-    margin: 0px 10px;
+    color: var(--text);
+    margin: 0px 15px;
     text-decoration: none;
-    color: black;
+   
     font-weight: bold;
     border-bottom: 2px solid transparent;
 }
 
 .n-bar a:hover {
-    color: green;
-    border-bottom: 2px solid green;
+    color: rgb(--text);
+    border-bottom: 2px solid var(--text);
+    transition: .5s;
+}
+
+.n-scrolled {
+    --text: rgb(8, 104, 59);
+    --background: rgb(255, 255, 255);
+    
+    box-shadow: 0 3px 20px rgba(black, 0.2);
 }
 
 
@@ -31,35 +63,62 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 200px 20px;
-    background-color: rgb(207, 245, 226);
     
+    margin: 0px 0px 200px 0px;
+    padding: 50px;
+    background-color: rgb(43, 82, 64);
+    
+}
+
+article.info {
+    border-left: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    color: white;
+    font-size: large;
+}
+
+article.info::after {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 50px;
+    width: 4px;
+    height: 60%;
+    background: rgb(255, 255, 255);
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+   transition: transform .5s ease-in;
+
+    
+}
+
+article.info:hover::after {
+    transform: scaleY(1);
+    transform-origin: top;
 }
 
 .profile img {
     height: 300px;
 }
 
-.about-me {
+.about-me, .resume, .projects {
     margin: 100px 20px;
-    background-color: rgb(207, 245, 226);}
-
-.resume {
-    margin: 100px 20px;
-    background-color: rgb(207, 245, 226);
-}
-
-.projects {
-    margin: 100px 20px;
-    background-color: rgb(207, 245, 226);
+    padding: 20px 50px;
+    color: black;
 }
 
 
 .title {
     padding: 1em 1.5em;
     position: relative;
+    left: -30px;
     width: fit-content;
-    transition: 2s;
+    transition: 1s;
+    color: rgb(8, 104, 59);
     
 
 }
@@ -68,17 +127,22 @@ body {
     content: '';
     position: absolute;
     top:0;
-    left: -25px;
+    left: -50px;
     width: 100%;
     height: 100%;
+    border-right:30px solid rgb(8, 104, 59);
    
     transform: scaleX(.1);
     transform-origin: left;
     /*transition: transform .5s ease-in;
     border-bottom: 2px solid transparent; */
     background: rgb(101, 104, 102);
-
 }
+
+.title:hover {
+    background-color: rgb(8, 104, 59);
+}
+
 
  .fancy{
     transform: scaleX(1);
@@ -87,25 +151,138 @@ body {
 
 }
 
-/*
-.fancy{
-    transform: scaleX(1);
-    color: white;
-    background: rgba(124, 117, 117);
-    transform: scaleX(1);
+.from-left {
+    grid-column: 2/3;
+    transform: translateX(-50%);
+}
+
+.from-right {
+    grid-column: 2/3;
+    transform: translateX(50%);
+}
+
+.from-left, .from-right {
+    transition: 
+    opacity 2.5s ease-in, 
+    transform 4s ease-in;
+    opacity: 0;
+}
+
+.from-left, .from-right {
+    transition: translateX(0);
+    opacity: 1;
 }
 
 
 
 
- /* .fancy:hover::after {
-    transform: scaleX(1);
-}
 
+/***********************************************************************/
 
+/* style button */
+#myBtn {
+    border: 2px solid white;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+  }
+  
+  /* adjust style when hovered */
+  #myBtn:hover {
+    color: green;
+    background-color: white;
+  
+  }
+  
+  /* the modal (background) */
+  .modal {
+      color: white;
+    display: none;
+    /* hidden by default */
+    position: fixed;
+    /* stay in place */
+    z-index: 5;
+    /* sit on top */
+    padding-top: 100px;
+    /* padding on all sides*/
+    left: 0;
+    /* location of the box */
+    top: 0;
+    /* location of the box */
+    width: 100%;
+    /* full width */
+    height: 100%;
+    /* full height */
+    background-color: rgba(0, 0, 0, 0.705);
+    /* black with opacity */
+    z-index: 100;
+  }
+  
+  /* style modal */
+  .modal-content {
+  
+    margin: auto;
+    border: 3px solid white;
+    width: 50%;
+    /*height: 50%; */
+    text-align: center;
+    line-height: 200%;
+    align-items: center;
+    justify-content: space-between;
+    
+  
+  }
 
-
- .slide{
-    transform: scaleX(1);
+  span.close {
+    position: absolute;
+    /* float: right; */
+    /* justify-content: end; */
+    /* align-items: end; */
+    /* align-content: end; */
+    display: flex;
+    top: 10%;
+    left: 72%;
     color: white;
-} */
+}
+  
+  /* align a tags */
+  .modal-content a {
+    align-content: center;
+    color: white;
+  }
+  
+  /* align icons */
+  .modal-content i {
+    float: left;
+  }
+  
+  /* no bullet points */
+  .modal-content li {
+    list-style-type: none;
+  }
+  
+  /* everything changes to orange when hovered */
+  .modal-content li:hover,
+  .modal-content a:hover,
+  .modal-content i:hover {
+    color: rgb(8, 104, 59);
+  }
+  
+  /* style close button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 25px;
+    padding-top: 20px;
+  }
+  
+  /* style close button when hovered */
+  .close:hover,
+  .close:focus {
+    cursor: pointer;
+    color: rgb(8, 104, 59)
+  }
+  
+  /****************************************************************/

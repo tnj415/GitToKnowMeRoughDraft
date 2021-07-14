@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/f85c83d532.js" crossorigin="anonymous"></script>
     <title>Portfolio</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -15,29 +18,51 @@
 
 <body>
     <nav class="n-bar">
-        <a href="">About Me</a>
-        <a href="">Resume</a>
-        <a href="">Projects</a>
-        <a href="">Contacts</a>
+        <a href="#about">About Me</a>
+        <a href="#resume">Resume</a>
+        <a href="#projects">Projects</a>
+        <a id="contact-nav">Contacts</a>
     </nav>
 
     <section class="profile">
         <article class="info">
-            <p>name</p>
-            <p>dev</p>
-            <p>contact button</p>
+            <p>Troy Johnson</p>
+            <p>Coder</p>
+            <button id="contact-btn">Contact Me</button>
         </article>
         <article class="portrait">
             <img src="./assets/img/Self_Avatar.jpg" alt="an avatar self portrait">
         </article>
     </section>
 
-    <section class="container about-me">
+    <!-- Modal-->
+    <div id="contact-modal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <h2>Contact Me</h2>
+            <ul>
+                <i class="fas fa-user"></i>
+                <li>Troy Johnson</li>
+                <i class="fas fa-phone"></i>
+                <li>(555) 555 - 5555</li>
+                <i class="fas fa-envelope-square"></i>
+                <li>tnj8510@gmail.com</li>
+                <i class="fab fa-github"></i>
+                <li><a href="https://github.com/tnj415">Github</a></li>
+                <i class="fab fa-linkedin"></i>
+                <li><a href="https://www.linkedin.com/in/troy-johnson-728b5b204/">Linkedin</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="container about-me" id="about">
         <h3 class="title" id="fancy">About Me</h3>
         <p>I love putting time and effort to create beautiful and functional projects</p>
     </section>
 
-    <section class="container resume">
+    <section class="container resume" id="resume">
         <h2 class="title">Resume</h2>
         <h3 class="project" id="thing1">thing1</h3>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque at quidem officia dolore odio animi.</p>
@@ -53,7 +78,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero deserunt illo pariatur et magnam rem!</p>
     </section>
 
-    <section class="container projects">
+    <section class="container projects" id="projects">
         <h2 class="title">Projects</h2>
         <div class="project1">
             <h3>Project goes here!</h3>
