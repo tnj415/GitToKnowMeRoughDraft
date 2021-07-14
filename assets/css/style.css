@@ -424,13 +424,7 @@ span.close {
 
 @media screen and (max-width: 374px) {
 
-    .project1 {
-        margin: 0 !important;
-        border-bottom: 5px solid rgb(43, 82, 64);
-        overflow: none;
-
-
-    }
+    .project1,
     .project2,
     .project3,
     .project4,
