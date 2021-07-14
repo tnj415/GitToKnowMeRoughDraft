@@ -25,7 +25,7 @@ profileElObserver.observe(profileEl)
 
 const options = {
     root: null,
-    threshold: .3,
+    threshold: 0,
     rootMargin: "-300px 0px -150px 0px"
 };
  // let callback = (entries, observer) => {
@@ -54,7 +54,7 @@ const appearOptions = {
     rootMargin: "0px 0px -100px 0px"
 };
 
-constAppearOnScroll = new IntersectionObserver (function(entries, appearOnScroll)
+const AppearOnScroll = new IntersectionObserver (function(entries, appearOnScroll)
 {
     entries.forEach(entry => {
         if(!entry.isIntersecting) {
