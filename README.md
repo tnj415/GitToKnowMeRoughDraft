@@ -30,8 +30,6 @@
 # Collaboration
 * The sole developer of this website is me, Troy Johnson.
 
-# Deployed Site
-* The website can be accessed in browser at https://tnj415.github.io/GitToKnowMe/
 # Github
 * The Repository can be accessed on Github at https://github.com/tnj415/GitToKnowMe
 

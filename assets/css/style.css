@@ -184,9 +184,10 @@ button#contact-btn:hover {
     flex-wrap: wrap;
 }
 
-.projects h3 {
+.projects h3, .projects a {
     color: rgb(124, 202, 216);
     text-align: center;
+    text-decoration: none;
 }
 .projects img{
     height:200px;
@@ -214,10 +215,11 @@ button#contact-btn:hover {
     background-color: rgb(101, 104, 102); 
 }
 
-.project1 p ,
-.project2 p ,
-.project3 p ,
-.project4 p ,
+.project1 p,
+.project1 p,
+.project2 p,
+.project3 p,
+.project4 p,
 .project5 p {
     position: absolute;
     top: 0;
@@ -243,6 +245,15 @@ button#contact-btn:hover {
 .project5:hover img {
     opacity:.2;
     
+}
+
+.gh-repos{
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-repos a:hover {
+    color:white;
 }
 
 /* .from-left {
