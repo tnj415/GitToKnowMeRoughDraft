@@ -82,6 +82,10 @@ article.info {
     font-size: large;
 }
 
+article.info button {
+    margin: 20px 0px;
+}
+
 article.info::after {
     content: "";
     position: absolute;
