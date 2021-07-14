@@ -21,7 +21,7 @@
 # Installation
 * Go to https://github.com/tnj415/GitToKnowMe and copy the repository on Github by clicking the green code button.
 * Open your terminal, navigate to destination you want to download this repository, and run the command:
-    * $ git clone git@github.com:tnj415/Reasons2stopLOOKING.git
+    * $ git clone https://github.com/tnj415/GitToKnowMe.git
 
 # Usage
 * The current version of the website can be accessed at the url: https://tnj415.github.io/GitToKnowMe/
